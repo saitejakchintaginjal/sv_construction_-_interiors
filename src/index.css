@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-family:
+      "Inter",
+      system-ui,
+      -apple-system,
+      sans-serif;
+  }
+
+  body {
+    @apply bg-brand-lightGrey text-slate-800 antialiased selection:bg-brand-amber selection:text-brand-navy;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+/* Custom utility classes for focus states and form items */
+@layer components {
+  .btn-primary {
+    @apply bg-brand-amber hover:bg-brand-amberHover text-brand-navy font-bold px-6 py-3 rounded-lg shadow-md transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center gap-2;
+  }
+
+  .btn-secondary {
+    @apply bg-brand-navy hover:bg-brand-navyLight text-white font-semibold px-6 py-3 rounded-lg transition-all duration-200 flex items-center justify-center gap-2;
+  }
+
+  .form-input {
+    @apply w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-amber focus:border-brand-amber focus:outline-none transition-colors duration-150;
+  }
+}
